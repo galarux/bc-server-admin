@@ -1,0 +1,123 @@
+{
+  "$comment": "Shared by the web UI and the PowerShell exporter. Categories are evaluated in array order (first match wins, case-insensitive); 'order' is the display order. Suggestions feed the value editor as hints, free text is still allowed.",
+  "categories": [
+    {
+      "id": "entra",
+      "order": 10,
+      "label": { "en": "Microsoft Entra ID", "es": "Microsoft Entra ID" },
+      "patterns": ["^(AzureActiveDirectory|ADOpenIdMetadataLocation|AppIdUri|ValidAudiences|WSFederation|ExcelAddIn|ExchangeAuthentication|TokenSigningCertificate|DisableTokenSigningCertificateValidation|ExtendedSecurityTokenLifetime|ClientServicesTokenSigningKey|ClientServicesFederation)"]
+    },
+    {
+      "id": "security",
+      "order": 11,
+      "label": { "en": "Security & encryption", "es": "Seguridad y cifrado" },
+      "patterns": ["^(AzureKeyVault|EncryptionProvider|SecurityProtocol|EnableALServerFileAccess|EnableMalwareScanning|EnableDataExportImport|EnableExclusiveApplicationPackageRole|UsePermissionSetsFromExtensions|LockoutPolicy)"]
+    },
+    {
+      "id": "telemetry",
+      "order": 15,
+      "label": { "en": "Telemetry & diagnostics", "es": "Telemetría y diagnóstico" },
+      "patterns": ["^ApplicationInsights", "ForApplicationInsights$", "^(TraceLevel|ExternalTraceLevel|EnableFullALFunctionTracing|ALFunctionTimingEnabled|ALLongRunning|SamplingProfilingEnabled|EnableApplicationChannelLog|SqlTracingAllowed|EnableDeadlockMonitoring|EnableLockTimeoutMonitoring|SqlLongRunningThreshold|ExternalEvents)"]
+    },
+    {
+      "id": "development",
+      "order": 7,
+      "label": { "en": "Development", "es": "Desarrollo" },
+      "patterns": ["^(DeveloperServices|DebuggingAllowed|EnableDebugging|SnapshotDebugger|TestAutomationEnabled|EnableSymbolLoadingAtServerStartup|ExtensionAllowedTargetLevel|EnableMultithreadedCompilation|EnableSqlInformationDebugger|AmountOfSqlStatementsInDebugger|EnableLongRunningSqlStatementsInDebugger|LongRunningSqlStatementsInDebuggerThreshold|GlobalSymbolReference|PTESymbolReference|CompileBusinessApplicationAtStartup)"]
+    },
+    {
+      "id": "nas",
+      "order": 9,
+      "label": { "en": "NAS Services", "es": "Servicios NAS" },
+      "patterns": ["^NAS"]
+    },
+    {
+      "id": "management",
+      "order": 8,
+      "label": { "en": "Management Services", "es": "Servicios de administración" },
+      "patterns": ["^Management"]
+    },
+    {
+      "id": "taskScheduler",
+      "order": 12,
+      "label": { "en": "Task Scheduler", "es": "Programador de tareas" },
+      "patterns": ["^(TaskScheduler|EnableTaskScheduler|DefaultTaskSchedulerSessionTimeout|MaxTaskSchedulerSessionTimeout|EnableUserConsistencyValidationOnTasks)"]
+    },
+    {
+      "id": "reports",
+      "order": 13,
+      "label": { "en": "Reports", "es": "Informes" },
+      "patterns": ["^(Report|EnableSaveFromReportPreview|EnableSaveTo|ProhibitedReportServerPrinters|WindowsPdfPrint|EnableWindowsPdfPrint|ReplaceReportExecutionTimeWithClientTime)"]
+    },
+    {
+      "id": "soap",
+      "order": 4,
+      "label": { "en": "SOAP Services", "es": "Servicios SOAP" },
+      "patterns": ["^(SOAP|PublicSOAPBaseUrl)"]
+    },
+    {
+      "id": "odata",
+      "order": 5,
+      "label": { "en": "OData Services", "es": "Servicios OData" },
+      "patterns": ["^(OData|PublicODataBaseUrl)"]
+    },
+    {
+      "id": "api",
+      "order": 6,
+      "label": { "en": "API Services", "es": "Servicios API" },
+      "patterns": ["^Api"]
+    },
+    {
+      "id": "clientServices",
+      "order": 3,
+      "label": { "en": "Client Services", "es": "Servicios de cliente" },
+      "patterns": ["^(ClientServices|ClientBuildRestriction|ServicesCertificate|ServicesUseNTLMAuthentication)"]
+    },
+    {
+      "id": "database",
+      "order": 2,
+      "label": { "en": "Database", "es": "Base de datos" },
+      "patterns": ["^(Database|ProtectedDatabasePassword|NetworkProtocol|EnableSql|TrustSQLServerCertificate|Sql|DisableSmartSql|BufferedInsertEnabled|EnableTriStateLocking|DisableQueryHint|EnablePartialRecords|EnableExclusiveExistsCheckOnModify|UseIncrementalCompanyDelete|DisableWriteInsideTryFunctions|AllowReadingCrossTenant|EnableCloudReplicationMaintenance|DegreeOfParallelismForUpgrade)"]
+    },
+    {
+      "id": "sessions",
+      "order": 14,
+      "label": { "en": "Sessions & limits", "es": "Sesiones y límites" },
+      "patterns": ["^(BackgroundSessions|ChildSessions|PageBackgroundTask|MaximumSessionRecursionDepth|NonInteractiveSessionsLogRetainInterval|SessionEventTableRetainInterval|AllowSession|NavHttpClient|QueryMaxRows|QueryTimeout|SearchTimeout|MaxRowsToExportToExcel|MaxStreamReadSize|NetFxComponents)"]
+    },
+    {
+      "id": "general",
+      "order": 1,
+      "label": { "en": "General", "es": "General" },
+      "patterns": ["^(ServerInstance|DefaultClient|DefaultLanguage|SupportedLanguages|UnsupportedLanguageIds|ServicesLanguage|ServicesDefaultCompany|ServicesDefaultTimeZone|ServicesOptionFormat|Multitenant|DataCacheSize|MaxConcurrentCalls|PublicWebBaseUrl|SolutionVersionExtension|RequiredExtensions|CalendarTwoDigitYearMax|ALCompatibleDateFormatCultureList|OverwriteExistingTranslations|UIElementRemovalOption|UseSimplifiedFilters|UseFindMinusWhenPopulatingPage|LegacyOptionCaptionResolution|EnableMembershipEntitlement|IntegrationRecordsTableId|PublicWinBaseUrl|XmlMetadataCacheSize|ResultSetHashCacheSize|CacheSizeForSearchGroups|CacheUserDefinedWebServices|EnableProfileCacheSynchronization)"]
+    },
+    {
+      "id": "other",
+      "order": 99,
+      "label": { "en": "Other", "es": "Otros" },
+      "patterns": []
+    }
+  ],
+  "suggestions": {
+    "NetworkProtocol": ["Default", "NamedPipes", "Sockets"],
+    "ClientServicesProtectionLevel": ["EncryptAndSign", "Sign", "None"],
+    "ClientServicesCredentialType": ["Windows", "UserName", "NavUserPassword", "AccessControlService"],
+    "UIElementRemovalOption": ["None", "LicenseFile", "LicenseFileAndUserPermissions"],
+    "SecurityProtocol": ["SystemDefault", "Tls12", "Tls13", "Tls11", "Tls", "Ssl3"],
+    "DefaultClient": ["Web", "Windows", "SOAP", "OData"],
+    "ClientBuildRestriction": ["AlwaysConnect", "WarnClient", "DoNotAllow"],
+    "TraceLevel": ["Critical", "Error", "Warning", "Normal", "Verbose", "Off"],
+    "ExternalTraceLevel": ["Critical", "Error", "Warning", "Information", "Verbose"],
+    "EncryptionProvider": ["LocalKeyFile", "AzureKeyVault"],
+    "AzureKeyVaultClientCertificateStoreLocation": ["LocalMachine", "CurrentUser"],
+    "ClientServicesIdleClientTimeout": ["MaxValue"],
+    "ClientServicesOperationTimeout": ["MaxValue"],
+    "QueryTimeout": ["MaxValue"],
+    "QueryMaxRows": ["MaxValue"],
+    "MaxRowsToExportToExcel": ["MaxValue"]
+  },
+  "readOnly": {
+    "ServerInstance": "instanceName",
+    "ProtectedDatabasePassword": "useCredentials"
+  }
+}

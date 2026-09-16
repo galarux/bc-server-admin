@@ -1,0 +1,19 @@
+# Local material that must never be published (may contain passwords / server names)
+_original/
+backups/
+exports/
+*-config.html
+*-config.csv
+*-config.json
+
+# Editor / OS noise
+.vscode/
+.idea/
+*.swp
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Test output
+TestResults/
+testResults.xml
