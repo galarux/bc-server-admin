@@ -1,7 +1,9 @@
 # Shared state and helpers for bc-server-admin.
 # NOTE: keep every .ps1 file in this project pure ASCII (Windows PowerShell 5.1 reads BOM-less files as ANSI).
 
-$script:BcsaVersion = '1.0.0'
+$script:BcsaVersion = '1.1.0'
+$script:BcsaCompany = @{ Name = 'Galarux'; Url = 'https://galarux.com'; Email = 'info@galarux.com' }
+$script:BcsaRepoUrl = 'https://github.com/galarux/bc-server-admin'
 $script:BcsaServicePrefix = 'MicrosoftDynamicsNavServer$'
 $script:BcsaSecretPattern = '(?i)(password|secret|connectionstring|instrumentationkey|tokensigningkey)$'
 

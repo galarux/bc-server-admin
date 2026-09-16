@@ -1,3 +1,7 @@
+<p align="center">
+  <a href="https://galarux.com"><img src="docs/images/banner-en.jpg" alt="Galarux - Smart Solutions for Business Central"></a>
+</p>
+
 # BC Server Admin
 
 [![CI](https://github.com/galarux/bc-server-admin/actions/workflows/ci.yml/badge.svg)](https://github.com/galarux/bc-server-admin/actions/workflows/ci.yml)
@@ -7,6 +11,8 @@
 **A web-based replacement for the Business Central Server Administration tool (the MMC console) for Microsoft Dynamics 365 Business Central on-premises.**
 
 Recent versions of Business Central no longer ship the old MMC snap-in, so managing a server instance means using PowerShell cmdlets or editing `CustomSettings.config` by hand. BC Server Admin gives you that console back as a local web page. It is a single PowerShell script with no installer and no dependencies, and it works with every Business Central / NAV instance installed on the machine.
+
+A free, open-source tool by **[Galarux](https://galarux.com)**, Microsoft partner specialised in Business Central.
 
 [Leer en español](README.es.md)
 
@@ -162,6 +168,26 @@ Issues and pull requests are welcome. For a bug, include your BC version and the
 
 Developed against Business Central 19 and the built-in demo mode. Tests run on Windows PowerShell 5.1 and PowerShell 7. The module loader follows the layouts Microsoft uses from NAV 2018 / BC 14 up to BC 29, but versions other than BC 19 have not been verified on a real server yet. If something does not work with yours, please [open an issue](https://github.com/galarux/bc-server-admin/issues).
 
+## About Galarux
+
+<a href="https://galarux.com">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="web/img/galarux-logo-white.png">
+    <img src="web/img/galarux-logo.png" alt="Galarux" height="48">
+  </picture>
+</a>
+
+BC Server Admin is developed and maintained by **Galarux**, an official Microsoft partner specialised in Business Central. We provide support, custom development and vertical solutions such as [Galarux Gantt](https://galarux.com/productos/galaruxgantt/), and we help other partners during workload peaks.
+
+- Website: [galarux.com](https://galarux.com)
+- Contact: [info@galarux.com](mailto:info@galarux.com)
+
+Need a hand with your Business Central servers? Get in touch.
+
 ## License
 
-[MIT](LICENSE). This project is not affiliated with or endorsed by Microsoft. Microsoft Dynamics 365 Business Central and Dynamics NAV are trademarks of Microsoft Corporation.
+[MIT](LICENSE), © 2026 Galarux Software and Consulting S.L.
+
+The Galarux name and logos (`web/img/galarux-*`, `docs/images/banner-*`, `docs/images/**/social-preview.png`) are not covered by the MIT license. Remove them from forks you redistribute under another name.
+
+This project is not affiliated with or endorsed by Microsoft. Microsoft Dynamics 365 Business Central and Dynamics NAV are trademarks of Microsoft Corporation.

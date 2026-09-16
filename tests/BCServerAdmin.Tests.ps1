@@ -173,6 +173,8 @@ Describe 'CustomSettings.config handling' {
         $html = Export-BcsaConfiguration -Instance $instance -Format Html -IncludeSecrets -Language es
         $html.content | Should -Match 'secret&amp;&lt;value&gt;'
         $html.fileName | Should -Match '^TESTBC-config-\d{8}-\d{6}\.html$'
+        $html.content | Should -Match 'href="https://galarux.com"'
+        $html.content | Should -Match 'data:image/png;base64,'
         $json = (Export-BcsaConfiguration -Instance $instance -Format Json).content | ConvertFrom-Json
         $json.instance | Should -Be 'TESTBC'
         ($json.settings | Where-Object key -eq 'DatabaseServer').category | Should -Be 'database'
@@ -263,10 +265,9 @@ Describe 'HTTP server (demo mode)' -Tag 'Integration' {
         $script:Token = $null
         for ($i = 0; $i -lt 60 -and -not $Token; $i++) {
             Start-Sleep -Milliseconds 500
-            if (Test-Path $LogFile) {
-                $match = [regex]::Match([string](Get-Content -LiteralPath $LogFile -Raw), 't=([0-9a-f]{64})')
-                if ($match.Success) { $script:Token = $match.Groups[1].Value }
-            }
+            $log = $null
+            if (Test-Path $LogFile) { $log = Get-Content -LiteralPath $LogFile -Raw }
+            if ($log -match 't=([0-9a-f]{64})') { $script:Token = $Matches[1] }
         }
         $script:Base = "http://localhost:$Port"
         $script:Headers = @{ 'X-BCSA-Token' = $Token }

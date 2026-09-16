@@ -56,6 +56,10 @@
 
 .EXAMPLE
     .\Start-BCServerAdmin.ps1 -ExportPath C:\Temp\bc -Instance BC252 -Format Html
+
+.NOTES
+    Free and open source (MIT) by Galarux - https://galarux.com - info@galarux.com
+    https://github.com/galarux/bc-server-admin
 #>
 [CmdletBinding(DefaultParameterSetName = 'Server')]
 param(

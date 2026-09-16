@@ -2,6 +2,14 @@
 
 All notable changes to this project are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/) and the project uses [Semantic Versioning](https://semver.org/).
 
+## [1.1.0] - 2026-09-16
+
+### Added
+
+- Galarux branding: logo in the top bar and sidebar, corporate colours in both themes, and an **About** dialog with website, contact and products.
+- The HTML export report carries the Galarux logo (embedded, so the file stays standalone) and links.
+- README banners and a social preview image (`docs/images/social-preview.png`).
+
 ## [1.0.0] - 2026-09-16
 
 ### Added
@@ -18,4 +26,5 @@ All notable changes to this project are documented here. The format follows [Kee
 - One PowerShell worker process per BC version so side-by-side installations work; PowerShell 7 is used for BC 24-28 when available.
 - `-Demo` mode with fictitious instances, used by the tests and the screenshots.
 
+[1.1.0]: https://github.com/galarux/bc-server-admin/releases/tag/v1.1.0
 [1.0.0]: https://github.com/galarux/bc-server-admin/releases/tag/v1.0.0

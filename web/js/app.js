@@ -3,6 +3,13 @@
   'use strict';
 
   const I18N = window.BCSA_I18N;
+  const REPO_URL = 'https://github.com/galarux/bc-server-admin';
+  const COMPANY = {
+    name: 'Galarux',
+    url: 'https://galarux.com',
+    email: 'info@galarux.com',
+    productUrl: 'https://galarux.com/productos/galaruxgantt/'
+  };
   const EVENT_LEVELS = { errors: 2, warnings: 3, all: 5 };
   const SESSION_COLUMNS = [
     ['SessionID', 'colSessionId'],
@@ -291,15 +298,49 @@
     const info = state.info;
     if (!info) return;
     $('#hostInfo').textContent = info.fqdn + ' · ' + info.user;
-    $('#sidebarFoot').replaceChildren(
-      h('div', null, 'bc-server-admin ' + info.version),
-      h('div', null, 'PowerShell ' + info.psVersion + (info.pwshAvailable ? ' · pwsh ✓' : '')),
-      h('a', { href: 'https://github.com/galarux/bc-server-admin', target: '_blank', rel: 'noopener noreferrer' }, 'GitHub')
-    );
+    $('#sidebarFoot').replaceChildren(h('div', { class: 'company' },
+      h('div', null, 'BC Server Admin ' + info.version),
+      h('a', { class: 'company-logo', href: COMPANY.url, target: '_blank', rel: 'noopener noreferrer', title: t('madeBy') + ' ' + COMPANY.name },
+        companyLogo()),
+      h('div', { class: 'company-links' },
+        extLink(COMPANY.url, 'galarux.com'),
+        extLink(REPO_URL, 'GitHub'),
+        h('button', { type: 'button', class: 'link-button', onclick: showAbout }, t('about'))),
+      h('div', null, 'PowerShell ' + info.psVersion + (info.pwshAvailable ? ' \u00b7 pwsh \u2713' : ''))));
     const banners = [];
     if (info.demo) banners.push(h('div', { class: 'banner info' }, t('demoBanner')));
     if (!info.isAdmin && !info.demo) banners.push(h('div', { class: 'banner warn' }, t('notAdminBanner')));
     $('#banners').replaceChildren(...banners);
+  }
+
+  function extLink(href, text) {
+    const external = /^https?:/.test(href);
+    return h('a', { href, target: external ? '_blank' : null, rel: external ? 'noopener noreferrer' : null }, text);
+  }
+
+  function companyLogo() {
+    return [
+      h('img', { class: 'logo-on-light', src: 'img/galarux-logo.png', alt: COMPANY.name }),
+      h('img', { class: 'logo-on-dark', src: 'img/galarux-logo-white.png', alt: COMPANY.name })
+    ];
+  }
+
+  function showAbout() {
+    const info = state.info || {};
+    openDialog({
+      title: t('aboutTitle'),
+      body: h('div', { class: 'about' },
+        h('a', { class: 'about-logo', href: COMPANY.url, target: '_blank', rel: 'noopener noreferrer' }, companyLogo()),
+        h('p', null, h('strong', { text: 'BC Server Admin ' + (info.version || '') })),
+        h('p', null, t('aboutText')),
+        h('p', { class: 'muted' }, t('aboutHelp')),
+        h('dl', { class: 'about-links' },
+          h('dt', { text: t('aboutWeb') }), h('dd', null, extLink(COMPANY.url, 'galarux.com')),
+          h('dt', { text: t('aboutContact') }), h('dd', null, extLink('mailto:' + COMPANY.email, COMPANY.email)),
+          h('dt', { text: t('aboutProducts') }), h('dd', null, extLink(COMPANY.productUrl, 'Galarux Gantt')),
+          h('dt', { text: t('aboutSource') }), h('dd', null, extLink(REPO_URL, 'github.com/galarux/bc-server-admin')),
+          h('dt', { text: t('aboutLicense') }), h('dd', null, extLink(REPO_URL + '/blob/main/LICENSE', 'MIT'))))
+    });
   }
 
   function applyTheme(theme) {

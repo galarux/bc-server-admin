@@ -212,7 +212,18 @@ window.BCSA_I18N = {
     shutdownText: 'The local web server stops. Business Central instances are not affected.',
     shutdownTextEdits: 'You have {n} unsaved change(s) that will be lost. The local web server stops; Business Central instances are not affected.',
     stoppedTitle: 'BC Server Admin was closed',
-    stoppedText: 'You can close this tab. Run Start-BCServerAdmin again to reopen it.'
+    stoppedText: 'You can close this tab. Run Start-BCServerAdmin again to reopen it.',
+
+    about: 'About',
+    madeBy: 'Made by',
+    aboutTitle: 'About BC Server Admin',
+    aboutText: 'A free, open-source tool by Galarux, Microsoft partner specialised in Business Central.',
+    aboutHelp: 'Need a hand with Business Central? Galarux offers support, custom developments and vertical solutions such as Galarux Gantt.',
+    aboutWeb: 'Website',
+    aboutContact: 'Contact',
+    aboutProducts: 'Products',
+    aboutSource: 'Source code',
+    aboutLicense: 'License'
   },
 
   es: {
@@ -427,6 +438,17 @@ window.BCSA_I18N = {
     shutdownText: 'Se detiene el servidor web local. Las instancias de Business Central no se ven afectadas.',
     shutdownTextEdits: 'Tienes {n} cambio(s) sin guardar que se perderán. Se detiene el servidor web local; las instancias de Business Central no se ven afectadas.',
     stoppedTitle: 'BC Server Admin se ha cerrado',
-    stoppedText: 'Puedes cerrar esta pestaña. Ejecuta Start-BCServerAdmin otra vez para volver a abrirlo.'
+    stoppedText: 'Puedes cerrar esta pestaña. Ejecuta Start-BCServerAdmin otra vez para volver a abrirlo.',
+
+    about: 'Acerca de',
+    madeBy: 'Hecho por',
+    aboutTitle: 'Acerca de BC Server Admin',
+    aboutText: 'Herramienta gratuita y open source de Galarux, partner de Microsoft especializado en Business Central.',
+    aboutHelp: '¿Necesitas ayuda con Business Central? En Galarux ofrecemos soporte, desarrollos a medida y soluciones verticales como Galarux Gantt.',
+    aboutWeb: 'Web',
+    aboutContact: 'Contacto',
+    aboutProducts: 'Productos',
+    aboutSource: 'Código fuente',
+    aboutLicense: 'Licencia'
   }
 };

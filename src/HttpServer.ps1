@@ -348,7 +348,8 @@ function Start-BcsaHttpServer {
     $url = "http://localhost:$Port/?t=$($script:BcsaHttp.Token)"
     try { $Host.UI.RawUI.WindowTitle = "BC Server Admin - http://localhost:$Port" } catch { }
     Write-Host ''
-    Write-Host '  BC Server Admin is running.' -ForegroundColor Cyan
+    Write-Host ("  BC Server Admin {0} is running." -f $script:BcsaVersion) -ForegroundColor Cyan
+    Write-Host ("  A free tool by {0} - {1}" -f $script:BcsaCompany.Name, $script:BcsaCompany.Url) -ForegroundColor DarkGray
     Write-Host "  Open: $url" -ForegroundColor White
     Write-Host '  Keep this window open. Press Ctrl+C (or use "Close" in the web UI) to stop.' -ForegroundColor DarkGray
     Write-Host ''
